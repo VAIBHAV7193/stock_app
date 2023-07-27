@@ -22,7 +22,7 @@ const Form = (props) => {
             if(res && res.data.success){
 
                  localStorage.setItem('auth',JSON.stringify(res.data));
-                 props.setState(true)
+                
 
             }
 

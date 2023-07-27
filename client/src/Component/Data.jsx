@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 import './Data.css'
 import TableData from './TableData';
 
 const Data = () => {
+
+    
 
     const data = JSON.parse(localStorage.getItem("auth"));
 
