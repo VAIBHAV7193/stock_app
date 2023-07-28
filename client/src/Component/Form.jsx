@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import './Form.css'
 import axios from 'axios'
+import { useAuth } from './Auth'
 
 const Form = (props) => {
 
     const [name,setName] = useState("");
-    const [date,setDate] = useState("")
+    const [date,setDate] = useState("");
+    const[auth,setAuth] = useAuth();
+    
     
 
     const submitHandler = async(e)=>{
@@ -21,7 +24,9 @@ const Form = (props) => {
             console.log(res);
             if(res && res.data.success){
 
+                 setAuth(res.data);
                  localStorage.setItem('auth',JSON.stringify(res.data));
+                 
                 
 
             }
@@ -39,6 +44,10 @@ const Form = (props) => {
        
         
     }
+
+
+    console.log('auth',auth)
+    
     
    
   return (
